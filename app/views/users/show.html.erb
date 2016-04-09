@@ -1,0 +1,30 @@
+<%= render 'layouts/navigation' %>
+<h2 class="title" align="center">Welcome Home <%= @user.username.titleize %> !</h2>
+
+<%= render 'shared/errors', obj: @memo %>
+
+
+ 
+<%= render 'memos/form' %>
+<%= render 'layouts/messages' %>
+
+<% @memos.each do |memo| %>
+  <div class="memos-wrapper">
+    <div class="col-md-2 memo-box">
+      <div class="memo-title">
+            <p class="lead" align="center"><%= memo.title %></p>
+      </div>
+      <div class="memo-url">
+            <p align="center"><%= link_to memo.url, memo.url, :target => "_blank" %></p>
+      </div>
+      <div class="memo-actions">
+                    <%= link_to 'Edit this memo', edit_memo_path(memo), class: "btn btn-xs btn-primary"  %>
+                    <%= link_to 'Delete this memo', memo_path(memo), method: :delete,
+                                                        data:{confirm: "Are you sure you want to delete this article?"}, 
+                                                        class: "btn btn-xs btn-danger" %>
+                    
+      </div>
+    </div>
+  </div> 
+<% end %>
+ 
