@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -14,4 +15,12 @@ class ApplicationController < ActionController::Base
     !!current_user
     
   end
+  
+  def create_thumbnail
+    @memo = Memo.find_by(url)
+    thumbnail = OpenGraphReader.parse(html)
+    thumbnail.og.image.url
+    @memo.thumbnail
+  end
+ 
 end

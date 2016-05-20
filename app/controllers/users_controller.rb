@@ -1,3 +1,4 @@
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update, :show]
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
   end
   
   def show
+     
      @user = User.find(params[:id])
      @memo = Memo.new
      #@memos = Memo.all
@@ -34,6 +36,8 @@ class UsersController < ApplicationController
      @memo.destroy
      redirect_to user_path(@user)
   end
+  
+  
   
   
   private
@@ -54,5 +58,9 @@ class UsersController < ApplicationController
     end
     
   end
+  
+  
+  
+  
   
 end

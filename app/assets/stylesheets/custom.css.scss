@@ -71,13 +71,37 @@ li{
 }
 
 .memo-box{
-  border: 1px solid black;
+  border: 1px solid lightgrey;
+  border-radius: 15px;
   margin-left: 25px;
   margin-bottom: 10px;
   padding: 0;
 }
 
-.memo-url, .memo-title{
-  border: 1px solid black;
+.memo-thumb{
   width: 100%;
 }
+
+.memo-url, .memo-title, .memo-actions{
+  //border: 1px solid black;
+  width: 100%;
+}
+
+.memo-url, .memo-actions{
+  border-top: 1px solid lightgrey;
+  padding: 5px;
+}
+
+.memo-title{
+ border-bottom: 1px solid lightgrey; 
+}
+.memo-title-content a{
+  font-family: 'PT Serif', serif;
+  color: darkblue;
+  
+}
+
+.action{
+  margin-left:50px;
+}
+
