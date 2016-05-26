@@ -17,11 +17,11 @@
             <img height="20" width="20" src='http://www.google.com/s2/favicons?domain=<%= memo.url %>'/></p>
       </div>
       
-     <!-- <div class="memo-thumb">
+     <div class="memo-thumb">
         
-          <embed   src="<%#= memo.url %>" width = 100%  > </embed>
-        </body>  
-      </div>-->
+          <embed   src="<%= memo.url %>" width = 100%  > </embed>
+          
+      </div>
        
       <div class="memo-url">
             <p align="center"><%= link_to truncate(memo.url, length:15), memo.url, :target => "_blank" %></p>
